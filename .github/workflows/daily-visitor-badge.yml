@@ -1,0 +1,53 @@
+# 每天自动把 README 里「今日访客」计数器的 page_id 换成当天日期
+#
+# 原理：visitor-badge 是按 page_id 独立计数的。
+#       把日期写进 page_id，一跨天就自动换成一个全新的计数器，
+#       所以它统计出来的天然就是「今天」的访问量。
+#
+# 白送的福利：每天一次自动提交，贡献格子天天都有小绿点。
+#
+# 用之前记得开权限：
+#   仓库 Settings -> Actions -> General -> Workflow permissions
+#   -> 选 "Read and write permissions" -> Save
+#   否则 Action 没有推送权限，会直接报 403。
+
+name: 刷新今日访客计数器
+
+on:
+  schedule:
+    # 16:05 UTC = 次日 00:05 北京时间
+    - cron: "5 16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取仓库代码
+        uses: actions/checkout@v4
+
+      - name: 把 page_id 里的日期换成今天
+        shell: bash
+        run: |
+          set -euo pipefail
+          TODAY=$(TZ=Asia/Shanghai date +%F)
+          echo "今天（北京时间）：$TODAY"
+          # 只替换 daily.YYYY-MM-DD 这一段，README 其它内容一个字都不碰
+          sed -ri "s/daily\.[0-9]{4}-[0-9]{2}-[0-9]{2}/daily.${TODAY}/g" README.md
+
+      - name: 提交并推送
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- README.md; then
+            echo "日期没变化，本次跳过提交"
+            exit 0
+          fi
+          git add README.md
+          git commit -m "chore: 刷新今日访客计数器 ($(TZ=Asia/Shanghai date +%F))"
+          git push
