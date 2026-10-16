@@ -95,8 +95,8 @@
 ## 👀 访客小本本
 
 <p align="center">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=ZTXBOSS666.ZTXBOSS666&left_text=%E6%80%BB%E8%AE%BF%E9%97%AE%E9%87%8F&left_color=%23F472B6&right_color=%23A78BFA&logo=github&radius=6" alt="总访问量" />
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=ZTXBOSS666.daily.2026-10-16&left_text=%E4%BB%8A%E6%97%A5%E8%AE%BF%E5%AE%A2&left_color=%23F9A8D4&right_color=%23C084FC&logo=github&radius=6" alt="今日访客" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=ZTXBOSS666.ZTXBOSS666&left_text=%E6%80%BB%E8%AE%BF%E9%97%AE%E9%87%8F&left_color=%23F472B6&right_color=%23A78BFA&logo=github&radius=6" alt="总访" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=ZTXBOSS666.daily.2026-10-16&left_text=%E4%BB%8A%E6%97%A5%E8%AE%BF%E5%AE%A2&left_color=%23F9A8D4&right_color=%23C084FC&logo=github&radius=6" alt="今日" />
 </p>
 
 <!-- 上面「今日访客」的 2026-10-16 由 .github/workflows/daily-visitor-badge.yml 每天自动改，
