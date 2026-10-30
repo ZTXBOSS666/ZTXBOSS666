@@ -96,7 +96,7 @@
 
 <p align="center">
   <img src="https://api.visitorbadge.io/api/visitors?path=ZTXBOSS666.profile&label=%E6%80%BB%E8%AE%BF%E9%97%AE%E9%87%8F&labelColor=%23F472B6&countColor=%23A78BFA" alt="总访问量" />
-  <img src="https://api.visitorbadge.io/api/visitors?path=ZTXBOSS666.daily.2026-10-30&label=%E4%BB%8A%E6%97%A5%E8%AE%BF%E5%AE%A2&labelColor=%23C084FC&countColor=%23F472B6" alt="今日访客" />
+  <img src="https://api.visitorbadge.io/api/visitors?path=ZTXBOSS666.daily.2026-10-31&label=%E4%BB%8A%E6%97%A5%E8%AE%BF%E5%AE%A2&labelColor=%23C084FC&countColor=%23F472B6" alt="今日访客" />
 </p>
 
 <!-- 上面「今日访客」的 2026-10-16 由 .github/workflows/daily-visitor-badge.yml 每天自动改，
